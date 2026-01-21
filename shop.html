@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Friendly 3 Column Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #ff0080, #ff6a00);
+      padding: 16px;
+    }
+
+    header {
+      background: linear-gradient(135deg, #ff0080, #ff6a00);
+      color: white;
+      padding: 26px 22px 22px;
+      text-align: center;
+      margin-bottom: 24px;
+      border-radius: 18px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+      position: relative;
+    }
+
+    .om-icon {
+      font-size: 42px;
+      margin-bottom: 6px;
+      display: inline-block;
+      color: #ffd700;
+      text-shadow:
+        0 0 6px rgba(255, 215, 0, 0.6),
+        0 0 12px rgba(212, 175, 55, 0.45),
+        0 0 20px rgba(212, 175, 55, 0.25);
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+
+    .column {
+      padding: 16px;
+      border-radius: 16px;
+      min-height: 120px;
+      cursor: pointer;
+      text-align: center;
+      background: #ffffff;
+      color: #111111;
+      font-weight: 600;
+      border: 2px solid #d4af37; /* gold border */
+      max-width: 260px;
+      width: 100%;
+      margin: 0 auto;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18), 0 0 6px rgba(212, 175, 55, 0.35); /* subtle gold glow */
+    }
+
+    .column:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 22px rgba(0, 0, 0, 0.28), 0 0 10px rgba(212, 175, 55, 0.45); /* enhanced gold glow on hover */
+      background: linear-gradient(180deg, #ffffff, #f9f6ef);
+      color: #000000;
+      border-color: #b8962e; /* darker gold on hover */
+    }
+
+    .icon {
+      font-size: 30px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .column:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+      background: #ffe6f2;
+    }
+
+    .column:active {
+      transform: scale(0.97);
+    }
+
+    .column h2 {
+      margin-bottom: 6px;
+      font-size: 16px;
+      letter-spacing: 0.3px;
+      color: inherit;
+    }
+
+    .column p {
+      font-size: 13px;
+      color: #374151;
+    }
+
+    /* Tablet */
+    @media (max-width: 900px) {
+      .container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  <script>
+    function openWhatsApp() {
+      const phone = '919004064936';
+      const message = 'Hello!!!';
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+</head>
+<body>
+
+  <header>
+    <div class="om-icon">ॐ</div>
+    <h1>सिद्धिविनायक अगरबत्ती</h1>
+    <p>Order • Call • Location</p>
+  </header>
+
+  <section class="container">
+    <button class="column" onclick="openWhatsApp()">
+      <span class="icon">💬</span>
+      <h2>Order Here</h2>
+      <p>Place your order on WhatsApp<br><strong>📞 9004064936</strong></p>
+    </button>
+
+    <button class="column" onclick="window.location.href='tel:+919892854283'">
+      <span class="icon">📞</span>
+      <h2>Call Us</h2>
+      <p>Tap to call directly<br><strong>📞 9892854283</strong></p>
+    </button>
+
+    <button class="column" onclick="window.open('https://www.google.com/maps?q=19.230069133667627,72.85574901840954','_blank')">
+      <span class="icon">📍</span>
+      <h2>सिद्धिविनायक अगरबत्ती</h2>
+      <p>Tap to open location</p>
+    </button>
+  </section>
+
+</body>
+</html>
